@@ -1,0 +1,2 @@
+http://localhost/www.cp3d.com/api/index.php?task=commandes&login=mdupond&pwd=123456
+http://localhost/www.cp3d.com/api/index.php?task=commandes&id=2&login=mdupond&pwd=123456

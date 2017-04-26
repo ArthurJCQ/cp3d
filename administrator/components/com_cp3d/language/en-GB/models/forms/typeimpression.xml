@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="text" disabled="true" />
+		
+        <field name="prixUniteHT" type="text" label="COM_CP3D_TYPE_IMPRESSION_PRIX_HT"
+            description="COM_CP3D_TYPE_IMPRESSION_PRIX_HT"
+            size="40" class="inputbox" default="" required="true"
+        />
+
+
+        <field name="modele_nom" type="sql" default="" label="COM_CP3D_TYPE_IMPRESSION_MODELE_NOM"
+            description="COM_CP3D_TYPE_IMPRESSION_MODELE_NOM"
+            query="SELECT id, nom FROM cp3d_cp3d_modele WHERE published=1 ORDER BY nom" key_field="id" value_field="nom" required="true"
+        />
+
+        <field name="materiau_nom" type="sql" default="" label="COM_CP3D_TYPE_IMPRESSION_MATERIAU_NOM"
+            description="COM_CP3D_TYPE_IMPRESSION_MATERIAU_NOM"
+            query="SELECT id, materiau FROM cp3d_cp3d_materiau WHERE published=1 ORDER BY materiau" key_field="id" value_field="materiau" required="true"
+        />
+
+        <field id="published" name="published" type="list"
+			label="JSTATUS"	description="JSTATUS"
+			class="chzn-color-state" size="1" default="1"
+		>
+			<option value="1">
+				JPUBLISHED</option>
+			<option value="0">
+				JUNPUBLISHED</option>
+			<option value="2">
+				JARCHIVED</option>
+			<option value="-2">
+				JTRASHED</option>
+		</field>
+		
+		
+		<field
+			name="hits" type="text" label="JGLOBAL_HITS"
+			description="JGLOBAL_HITS"
+			size="6" class="readonly" readonly="true"  disabled="true" filter="unset"
+		/>
+		
+		<field
+			name="created" type="calendar" label="JGLOBAL_FIELD_CREATED_LABEL"
+			description="JGLOBAL_FIELD_CREATED_LABEL"
+			size="22" class="inputbox" default=""
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc"
+		/>
+		<field
+			name="created_by" type="user" label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+			description="JGLOBAL_FIELD_CREATED_BY_LABEL"
+			class="inputbox" default=""
+		/>
+		<field
+			name="modified" type="calendar" label="JGLOBAL_FIELD_MODIFIED_LABEL"
+			description="JGLOBAL_FIELD_MODIFIED_LABEL"
+			size="22"  class="readonly" default="" readonly="true"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc"
+		/>
+		<field
+			name="modified_by" type="user" label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+			description="JGLOBAL_FIELD_MODIFIED_BY_DESC"
+			class="inputbox" default=""
+		/>
+	</fieldset>
+</form>

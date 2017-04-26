@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="hidden" />
+
+		<field name="asset_id" type="hidden" filter="unset" />
+		
+        <field name="idUtilisateur" type="sql" default="" label="COM_CP3D_COMMANDE_CLIENT" 
+			description="COM_CP3D_COMMANDE_CLIENT"
+			query="SELECT id, nom FROM #__cp3d_utilisateur WHERE published=1 ORDER BY nom" 
+			key_field="id" value_field="nom" required="true" />
+        <field
+			name="dateCommande" type="calendar" label="COM_CP3D_COMMANDE_DATE"
+			description="COM_CP3D_COMMANDE_DATE"
+			size="22" class="inputbox" default=""
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc"
+		/>
+        <field name="prixTotalHT" type="text" label="COM_CP3D_COMMANDE_PRIX_TOTAL_HT"
+            description="COM_CP3D_COMMANDE_PRIX_TOTAL_HT"
+            size="40" class="inputbox" default="" required="true"
+        />
+        <field name="prixTotalTTC" type="text" label="COM_CP3D_COMMANDE_PRIX_TOTAL_TTC"
+            description="COM_CP3D_COMMANDE_PRIXT_OTAL_TTC"
+            size="40" class="inputbox" default="" required="true"
+        />
+        <field name="tva" type="text" label="COM_CP3D_COMMANDE_TVA"
+            description="COM_CP3D_COMMANDE_TVA"
+            size="40" class="inputbox" default="" required="true"
+        />
+        <field name="idEtatCommande" type="sql" default="" label="COM_CP3D_COMMANDE_ETAT" 
+			description="COM_CP3D_COMMANDE_ETAT"
+			query="SELECT id, etat FROM #__cp3d_etatCommande WHERE published=1 ORDER BY etat" 
+			key_field="id" value_field="etat" required="true" />
+
+		<field id="published" name="published" type="list"
+			label="JSTATUS"	description="JSTATUS"
+			class="chzn-color-state" size="1" default="1"
+		>
+			<option value="1">
+				JPUBLISHED</option>
+			<option value="0">
+				JUNPUBLISHED</option>
+			<option value="2">
+				JARCHIVED</option>
+			<option value="-2">
+				JTRASHED</option>
+		</field>
+		
+		
+		<field
+			name="hits" type="text" label="JGLOBAL_HITS"
+			description="JGLOBAL_HITS"
+			size="6" class="readonly" readonly="true" filter="unset"
+		/>
+		
+		<field
+			name="created" type="calendar" label="JGLOBAL_FIELD_CREATED_LABEL"
+			description="JGLOBAL_FIELD_CREATED_LABEL"
+			size="22" class="inputbox" default=""
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc"
+		/>
+		<field
+			name="created_by" type="user" label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+			description="JGLOBAL_FIELD_CREATED_BY_LABEL"
+			class="inputbox" default=""
+		/>
+		<field
+			name="modified" type="calendar" label="JGLOBAL_FIELD_MODIFIED_LABEL"
+			description="JGLOBAL_FIELD_MODIFIED_LABEL"
+			size="22"  class="readonly" default="" readonly="true"
+			format="%Y-%m-%d %H:%M:%S" filter="user_utc"
+		/>
+		<field
+			name="modified_by" type="user" label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+			description="JGLOBAL_FIELD_MODIFIED_BY_DESC"
+			class="inputbox" default=""
+		/>
+
+		
+
+	</fieldset>
+</form>

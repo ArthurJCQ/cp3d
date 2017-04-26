@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+ 	<name>com_cp3d</name>
+	<creationDate>Décembre 2016</creationDate>
+	<author>LLA TSIO2 SLAM 2016-2017</author>
+	<copyright>All rights reserved</copyright>
+	<license>GNU/GPL</license>
+	<version>1.2</version>
+	<description>com_cp3d_descr</description>
+
+	<install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.sql</file>
+        </sql>
+    </uninstall>
+
+	<administration>
+		<menu>com_cp3d</menu>
+		<submenu>
+			<menu link="option=com_cp3d&amp;view=utilisateurs">COM_CP3D_UTILISATEURS</menu>
+			<menu link="option=com_cp3d&amp;view=entreprises">COM_CP3D_ENTREPRISES</menu>
+			<menu link="option=com_cp3d&amp;view=modeles">COM_CP3D_MODELES</menu>
+			<menu link="option=com_cp3d&amp;view=typeimpressions">COM_CP3D_TYPES_IMPRESSION</menu>
+			<menu link="option=com_cp3d&amp;view=commandes">COM_CP3D_COMMANDES</menu>
+			<menu link="option=com_cp3d&amp;view=lignecommandes">COM_CP3D_LIGNES_COMMANDE</menu>
+		</submenu>
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>language</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>cp3d.php</filename>
+			<filename>cp3d.xml</filename>
+			<filename>index.html</filename>
+		</files>                
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_cp3d.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_cp3d.sys.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_cp3d.ini</language>
+			<language tag="fr-FR">language/fr-FR/fr-FR.com_cp3d.sys.ini</language>
+		</languages>
+	</administration>
+</extension>
