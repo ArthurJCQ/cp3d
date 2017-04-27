@@ -794,15 +794,18 @@ CREATE TABLE `cp3d_cp3d_modele` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `cp3d_cp3d_modele`
+-- Contenu de la table `modele`
 --
 
-INSERT INTO `cp3d_cp3d_modele` (`id`, `nom`, `alias`, `description`, `dossierImage`, `modele3D`, `idEtatModele`, `idTheme`, `idUtilisateur`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
-(1, 'Le Cube', 'lecube', 'C''est LE Cube.', 'dossierimage', 'modele', 3, 1, 2, 1, '2016-11-15 00:00:00', 456, '2016-11-29 00:00:00', 456, 0),
-(2, 'Le Cylindre', 'lecylindre', 'C''est LE Cylindre.', 'dossierimage', 'modele', 3, 5, 2, 1, '2016-11-17 00:00:00', 456, '2016-11-25 00:00:00', 456, 19);
+INSERT INTO `modele` (`id`, `nom`, `alias`, `description`, `dossierImage`, `modele3D`, `idEtatModele`, `idTheme`, `idUtilisateur`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
+(1, 'Le Cube', 'lecube', 'modèle 3D d''un Cube', '', '', 3, 1, 2, 1, '2016-11-15 00:00:00', 456, '2016-11-29 00:00:00', 456, 0),
+(2, 'Le Cylindre', 'lecylindre', 'modèle 3D d''un Cylindre', '', '', 3, 5, 2, 1, '2016-11-17 00:00:00', 456, '2016-11-25 00:00:00', 456, 19),
+(4, 'la boule', 'laboule', 'modèle 3D d''une boule', '', '', 3, 1, 1, 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(5, 'le cube2', 'lecube2', 'modèle 3D d''un autre Cube', '', '', 3, 2, 3, 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(6, 'modele x', 'modelex', 'modèle 3D exemple X', '', '', 3, 6, 2, 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
+(7, 'modele y', 'modeley', 'modèle 3D exemple Y', '', '', 3, 6, 2, 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
--- --------------------------------------------------------
-
+-------------------
 --
 -- Structure de la table `cp3d_cp3d_pays`
 --
