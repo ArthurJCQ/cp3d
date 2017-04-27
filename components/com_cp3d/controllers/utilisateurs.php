@@ -74,7 +74,12 @@ class Cp3dModelUtilisateurs extends JModelList
 		else if (in_array('11', $user->groups)) { $idCurrentGroup = 3; } // 3 = DIRECTEUR
 		else if (in_array('13', $user->groups)) { $idCurrentGroup = 4; } // 4 = DESIGNER
 		switch ($idCurrentGroup) {
+			case 3: //req directeur
 
+			$query	= $this->_db->getQuery(true);
+			$query-> SELECT ('u.id, u.nom, u.prenom, u.email, e.raisonSociale');
+			$query->from('#__cp3d_utilisateur u, #__cp3d_entreprise e');
+			$query->WHERE ('u.idEntreprise=e.id');
 
 			case 4: //req designer
 
@@ -83,9 +88,7 @@ class Cp3dModelUtilisateurs extends JModelList
 			$query->SELECT ('u.id, u.nom, u.prenom, u.email, e.raisonSociale');
 			$query->from('#__cp3d_utilisateur u');
 			$query->join('inner','#__cp3d_entreprise e ON u.idEntreprise=e.id');
-			$query->join('inner','#__users ju ON ju.email=u.email');
-			$query->WHERE('ju.id='.$idCurrentUser.'');
-			break;
+			$query->WHERE('u.id='.$idCurrentUser.'');
 
 			case 2: //req imprimeur
 
@@ -93,9 +96,7 @@ class Cp3dModelUtilisateurs extends JModelList
 			$query->SELECT ('u.id, u.nom, u.prenom, u.email, e.raisonSociale');
 			$query->from('#__cp3d_utilisateur u');
 			$query->join('inner','#__cp3d_entreprise e ON u.idEntreprise=e.id');
-			$query->join('inner','#__users ju ON ju.email=u.email');
-			$query->WHERE('ju.id='.$idCurrentUser.'');
-			break;
+			$query->WHERE('u.id='.$idCurrentUser.'');
 
 			case 1: //req client
 
@@ -103,19 +104,7 @@ class Cp3dModelUtilisateurs extends JModelList
 			$query->SELECT ('u.id, u.nom, u.prenom, u.email, e.raisonSociale');
 			$query->from('#__cp3d_utilisateur u');
 			$query->join('inner','#__cp3d_entreprise e ON u.idEntreprise=e.id');
-			$query->join('inner','#__users ju ON ju.email=u.email');
-			$query->WHERE('ju.id='.$idCurrentUser.'');
-			break;
-
-
-			case 3: //req directeur
-
-			$query	= $this->_db->getQuery(true);
-			$query->SELECT ('u.id, u.nom, u.prenom, u.email, e.raisonSociale');
-			$query->from('#__cp3d_utilisateur u');
-			$query->join('inner','#__cp3d_entreprise e ON u.idEntreprise=e.id');
-			$query->join('inner','#__users ju ON ju.email=u.email');
-			break;
+			$query->WHERE('u.id='.$idCurrentUser.'');
 
 		}
 		// filtre de recherche rapide textuelle

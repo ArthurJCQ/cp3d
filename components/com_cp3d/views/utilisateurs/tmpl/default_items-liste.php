@@ -8,7 +8,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 ?>
 
 <form action="<?php echo JUri::getInstance()->toString(); ?>" method="post" name="adminForm" id="adminForm">
-
+ 		
 	<!-- affichage du filtre de nombre d'enregistrement par page -->
 	<fieldset class="filters">
 		<div class="display-limit">
@@ -28,10 +28,13 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<div class="btn-group pull-left">
 			<button type="submit" class="btn" title="<?php echo JText::_('JSEARCH_FILTER');?>">
 				<i class="icon-search"></i></button>
-		</div>
-		<div class="btn-group pull-left">
-			<a href="<?php echo JRoute::_('index.php?option=com_cp3d&view=form_c&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
 		</div>	
+		<!-- Ajouter un modèle -->
+		<!--
+		<div class="btn-group pull-left">
+			<a href="<?php echo JRoute::_('index.php?option=com_cp3d&view=form-m&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
+		</div>	
+		-->
 		<div class="btn-group pull-right">
 			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
 			<?php echo $this->pagination->getLimitBox(); ?>
@@ -39,6 +42,10 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 	</div>			
 	<div class="clearfix"> </div>
 	<br />
+	<!-- Liste -->
+	<?php
+		var_dump($listDirn); var_dump($listOrder );
+	?>
 	<table class="table table-striped" id="articleList">
 		<thead>
 			<tr>
@@ -53,6 +60,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 				</th>
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_UTILISATEUR_ENTREPRISE'), 'idEntreprise', $listDirn, $listOrder) ?>
+				</th>
 			</tr>
 		</thead>
 
@@ -62,12 +70,12 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 					<td>
 						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->nom ?></a>
 					</td>
-					<td><?php echo $item->prenom ?></td>
 					<td><?php echo $item->email ?></td>
 					<td><?php echo $item->raisonSociale ?></td>
-					
 				</tr>			
 			<?php endforeach; ?>
 		</tbody>
 	</table>
+	<!-- Fin liste -->
+	
 </form>
