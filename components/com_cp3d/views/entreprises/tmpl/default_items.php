@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-$uriCompoDetail = JURI::base(true)."/index.php?option=com_cp3d&view=utilisateur&id=";
+$uriCompoDetail = JURI::base(true)."/index.php?option=com_cp3d&view=entreprise&id=";
 
 $listOrder	= $this->escape($this->state->get('list.ordering'));
 $listDirn	= $this->escape($this->state->get('list.direction'));
@@ -28,9 +28,9 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<div class="btn-group pull-left">
 			<button type="submit" class="btn" title="<?php echo JText::_('JSEARCH_FILTER');?>">
 				<i class="icon-search"></i></button>
-		</div>
+		</div>	
 		<div class="btn-group pull-left">
-			<a href="<?php echo JRoute::_('index.php?option=com_cp3d&view=form_c&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
+			<a href="<?php echo JRoute::_('index.php?option=com_cp3d&view=form&layout=edit'); ?>" class="btn" role="button"><span class="icon-plus"></span></a>
 		</div>	
 		<div class="btn-group pull-right">
 			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
@@ -43,29 +43,44 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 		<thead>
 			<tr>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_UTILISATEUR_NOM'), 'nom', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_ENTREPRISES_ID'), 'id', $listDirn, $listOrder) ?>
+				</th>
+				<!-- <th class="title">Publié</th> -->
+				<th class="title">
+					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_ENTREPRISES_RAISON_SOCIALE'), 'raisonSociale', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_UTILISATEUR_PRENOM'), 'prenom', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_ENTREPRISES_NUM_SIRET'), 'numSiret', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_UTILISATEUR_EMAIL'), 'email', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_ENTREPRISES_RIB'), 'rib', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_UTILISATEUR_ENTREPRISE'), 'idEntreprise', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_ENTREPRISES_PUBLISHED'), 'published', $listDirn, $listOrder) ?>
+
 			</tr>
 		</thead>
 
 		<tbody>
 			<?php foreach($this->items as $i => $item) : ?>
 				<tr class="row<?php echo $i % 2; ?>">
-					<td>
-						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->nom ?></a>
+				<td>
+						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->id?></a>
 					</td>
-					<td><?php echo $item->prenom ?></td>
-					<td><?php echo $item->email ?></td>
-					<td><?php echo $item->raisonSociale ?></td>
-					
+					<td>
+						<a href="<?php echo $uriCompoDetail.$item->id ?>"><?php echo $item->raisonSociale?></a>
+					</td>
+					<td>
+						 <?php echo $item->numSIRET?>
+					</td>
+					<td>
+						<?php echo $item->rib?>
+					</td>
+					<td>
+						<?php echo $item->published?>
+					</td>
+					<!-- <td><?php echo JHtml::_('jgrid.published', $item->published, $i, 'entreprises.', true); ?></td> -->
+					<!-- <td><?php echo JHtml::_('date', $item->created, 'j F Y'); ?></td> -->
 				</tr>			
 			<?php endforeach; ?>
 		</tbody>

@@ -2,7 +2,7 @@
 defined('_JEXEC') or die('Restricted access');
 ?>
 
-<h1>Utilisateurs</h1>
+<h1>Entreprises de l'annuaire</h1>
 
 <form action="<?php echo htmlspecialchars(JFactory::getURI()->toString()); ?>" method="post" name="adminForm" id="adminForm">
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<metadata> 
+	<layout title="Profil utilisateur"> 
+		<message> 
+			<![CDATA[Ecran de d'un modèle]]> 
+		</message> 
+	</layout> 
+
+	<fields name="request">
+		<fieldset name="request">
+			<field name="id" type="text"
+				label="ID user"
+				description="Saisir l'ID de l'user à lier à ce menu"
+				required="true" edit="false" clear="true"                         
+			/>
+		</fieldset>
+	</fields>
+</metadata>
