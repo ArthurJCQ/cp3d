@@ -805,7 +805,7 @@ INSERT INTO `cp3d_cp3d_modele` (`id`, `nom`, `alias`, `description`, `dossierIma
 (6, 'modele x', 'modelex', 'modèle 3D exemple X', '', '', 3, 6, 2, 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
 (7, 'modele y', 'modeley', 'modèle 3D exemple Y', '', '', 3, 6, 2, 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0);
 
--------------------
+-- --------------------------------------------------------
 --
 -- Structure de la table `cp3d_cp3d_pays`
 --
