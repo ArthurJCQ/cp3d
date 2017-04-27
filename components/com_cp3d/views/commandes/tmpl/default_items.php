@@ -49,10 +49,10 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_COMMANDE_CLIENT'), 'nom_client' . 'prenom_client', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_COMMANDES_ADRESSE'), 'adresse', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_COMMANDE_ADRESSE'), 'adresse', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
-					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_COMMANDES_PRIXTTC'), 'prix', $listDirn, $listOrder) ?>
+					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_COMMANDE_PRIX_TTC'), 'prix', $listDirn, $listOrder) ?>
 				</th>
 				<th class="title">
 					<?php echo JHtml::_('grid.sort', JText::_('COM_CP3D_COMMANDE_ETAT'), 'etat', $listDirn, $listOrder) ?>
