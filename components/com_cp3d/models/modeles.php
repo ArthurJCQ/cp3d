@@ -80,7 +80,7 @@ class Cp3dModelModeles extends JModelList
 		$query->select('u.nom AS nomU')->join('LEFT', '#__cp3d_utilisateur AS u ON u.id=m.idUtilisateur');
 
 		// joint la table etatModele
-		$query->select('e.etatModele AS etatModele')->join('LEFT', '#__cp3d_etatModele AS e ON e.id=m.idEtatModele');
+		$query->select('e.etatModele AS etatModele')->join('LEFT', '#__cp3d_etatmodele AS e ON e.id=m.idEtatModele');
 
 		// filtre de recherche rapide textuelle
 		$search = $this->getState('filter.search');
