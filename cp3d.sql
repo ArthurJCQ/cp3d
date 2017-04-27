@@ -797,7 +797,7 @@ CREATE TABLE `cp3d_cp3d_modele` (
 -- Contenu de la table `modele`
 --
 
-INSERT INTO `modele` (`id`, `nom`, `alias`, `description`, `dossierImage`, `modele3D`, `idEtatModele`, `idTheme`, `idUtilisateur`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
+INSERT INTO `cp3d_cp3d_modele` (`id`, `nom`, `alias`, `description`, `dossierImage`, `modele3D`, `idEtatModele`, `idTheme`, `idUtilisateur`, `published`, `created`, `created_by`, `modified`, `modified_by`, `hits`) VALUES
 (1, 'Le Cube', 'lecube', 'modèle 3D d''un Cube', '', '', 3, 1, 2, 1, '2016-11-15 00:00:00', 456, '2016-11-29 00:00:00', 456, 0),
 (2, 'Le Cylindre', 'lecylindre', 'modèle 3D d''un Cylindre', '', '', 3, 5, 2, 1, '2016-11-17 00:00:00', 456, '2016-11-25 00:00:00', 456, 19),
 (4, 'la boule', 'laboule', 'modèle 3D d''une boule', '', '', 3, 1, 1, 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, 0),
