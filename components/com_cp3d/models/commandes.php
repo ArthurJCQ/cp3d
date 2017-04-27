@@ -60,7 +60,7 @@ class Cp3dModelCommandes extends JModelList
 				$query->select('cl.nom AS nom_client, cl.prenom AS prenom_client')->join('LEFT', '#__cp3d_utilisateur AS cl ON c.idUtilisateur=cl.id');
 				//joint l'utilisateur joomla à l'utilisateur client
 				$query->select('ju.id AS joomla_uid')->join('LEFT', '#__users AS ju ON cl.email = ju.email');
-				$query->select('e.etat AS etat')->join('LEFT', '#__cp3d_etatCommande AS e ON c.idEtatCommande = e.id');
+				$query->select('e.etat AS etat')->join('LEFT', '#__cp3d_etatcommande AS e ON c.idEtatCommande = e.id');
 				// filtre de recherche rapide textuelle
 				$search = $this->getState('filter.search');
 				if (!empty($search)) {
