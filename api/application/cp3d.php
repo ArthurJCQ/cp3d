@@ -102,7 +102,11 @@ class AppCP3DWeb extends JApplicationWeb
 				
 				// Recherche la vue éventuellement demandée :
 				if ($task !== ""){
-					$response[$task] = $this->LoadViewResult($task, $id, $email);
+					if ($task == "modeles"){
+						$response[$task] = $this->LoadViewResult($task, $id);
+					} else {
+						$response[$task] = $this->LoadViewResult($task, $id, $email);
+					}
 				}
 				echo json_encode($response);
 			}
