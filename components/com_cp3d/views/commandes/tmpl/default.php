@@ -13,12 +13,12 @@ else if (in_array('11', $user->groups)) { $idCurrentGroup = 3; } //3 = DIRECTEUR
 ?>
 
 <?php if ($idCurrentGroup == 0) : ?>
-	<?php echo JError::raiseWarning( 100, JText::_('COM_ANNUAIRE_RESTRICTED_ACCESS') ); ?>
+	<?php echo JError::raiseWarning( 100, JText::_('COM_CP3D_RESTRICTED_ACCESS') ); ?>
 <?php else : ?>
 
-	<h2><?php echo JText::_('COM_ANNUAIRE_OPTIONS')." : ".JText::_('COM_ANNUAIRE_CONTACTS')." - "; ?>
+	<h2><?php echo JText::_('COM_CP3D_OPTIONS')." : ".JText::_('COM_CP3D_ENTREPRISE')." - "; ?>
 		<a href="<?php echo JRoute::_('index.php?option=com_cp3d&view=commandes'); ?>">
-			<?php echo JText::_('COM_ANNUAIRE_ENTREPRISES'); ?>
+			<?php echo JText::_('COM_CP3D_COMMANDE'); ?>
 		</a>
 	</h2>
 
