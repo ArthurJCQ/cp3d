@@ -13,7 +13,7 @@ $user = JFactory::getUser();
  *
  * Le groupe portant l'id 11 est le groupe du directeur CP3D
  *
- * A changer à l'intégration en fonction du groupe du directeur
+ * A changer à l'intégration en fonction du groupe de l'utilisateur
  */
 $isAdmin = (in_array('11', $user->groups));
 ?>

@@ -55,9 +55,9 @@ class Cp3dModelLignesCommande extends JModelList
 		 *
 		 * Requête SQL
 		 *
-		 * Les tables utilisées : #__cp3d_ligneCommande
+		 * Les tables utilisées : #__cp3d_lignecommande
 		 *                        #__cp3d_entreprise
-		 *                        #__cp3d_typeImpression
+		 *                        #__cp3d_typeimpression
 		 *                        #__cp3d_modele
 		 *
 		 * $_GET['ic'] permet ici de récupérer l'id de la commande
@@ -70,7 +70,7 @@ class Cp3dModelLignesCommande extends JModelList
 		 * index.php/component/cp3d/?view=lignescommande&ic=1
 		 */
 		$query->select('lc.id, lc.quantite, lc.dateProduction, lc.note, lc.commentaire, lc.dateAvis, e.raisonSociale, lc.idCommande, lc.published, lc.idTypeImpression, lc.hits, lc.modified, m.nom');
-		$query->from('#__cp3d_ligneCommande lc')->join('LEFT', ' #__cp3d_entreprise AS e ON e.id = lc.idEntreprise')->join('LEFT', ' #__cp3d_typeImpression AS ti ON lc.idTypeImpression = ti.id')->join('LEFT', ' #__cp3d_modele AS m ON m.id = ti.idModele')->where('lc.idcommande =' .$_GET['ic']);
+		$query->from('#__cp3d_lignecommande lc')->join('LEFT', ' #__cp3d_entreprise AS e ON e.id = lc.idEntreprise')->join('LEFT', ' #__cp3d_typeimpression AS ti ON lc.idTypeImpression = ti.id')->join('LEFT', ' #__cp3d_modele AS m ON m.id = ti.idModele')->where('lc.idCommande =' .$_GET['ic']);
 
 		$search = $this->getState('filter.search');
 		if (!empty($search)) {
